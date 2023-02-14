@@ -34,7 +34,8 @@ class MedicineDetails {
 
     }
    }
-
+   
+   //create a function of fromJson using json generator in browser
    MedicineDetails.fromJson(Map<String, dynamic> json) {
     medicineName = json['medicineName'];
     medicinePrice = json['medicinePrice'];
@@ -44,6 +45,7 @@ class MedicineDetails {
     expiryDate = DateTime.parse( json['expiryDate'].toString());
   }
 
+  //create a function of toJson using json generator in browser
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['medicineName'] = medicineName;
