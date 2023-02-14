@@ -55,7 +55,7 @@ Future addToMedicineItem(MedicineDetails medicineItemObj) async {
 //create a function that can delete a medicine items from the list 
  Future deleteFromMedicineItem(MedicineDetails medicineItemObj) async{
   var listofMedicineItem=await readAllMedicineItems();
-  listofMedicineItem.removeWhere((element) => element.expiryDate == medicineItemObj.expiryDate);
+  listofMedicineItem.removeWhere((element) => element.id == medicineItemObj.id);
   await writeMedicineItemsToFile(listofMedicineItem);
  }
 

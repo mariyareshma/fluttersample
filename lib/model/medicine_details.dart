@@ -1,7 +1,10 @@
+import 'package:uuid/uuid.dart';
+
 import 'category_details.dart';
 
 // create a class and class items 
 class MedicineDetails {
+  String? id;
   String? medicineName;
   int? medicinePrice;
   String? description;
@@ -9,7 +12,9 @@ class MedicineDetails {
   bool? internalUse;
   DateTime? expiryDate;
 
-  MedicineDetails({this.medicineName,this.medicinePrice,this.description,this.category,this.internalUse,this.expiryDate});
+  MedicineDetails({this.medicineName,this.medicinePrice,this.description,this.category,this.internalUse,this.expiryDate}){
+    id=Uuid().v4();
+  }
 
   // create a function that returns a string value and find out  the usage of medicine 
   String getInternalUseValue() {
@@ -37,6 +42,7 @@ class MedicineDetails {
    
    //create a function of fromJson using json generator in browser
    MedicineDetails.fromJson(Map<String, dynamic> json) {
+    id= json['id'];
     medicineName = json['medicineName'];
     medicinePrice = json['medicinePrice'];
     category = MedicineCategory.values[int.parse(json['category'].toString())];
@@ -48,6 +54,7 @@ class MedicineDetails {
   //create a function of toJson using json generator in browser
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
+     data['id']=id;
     data['medicineName'] = medicineName;
     data['medicinePrice'] = medicinePrice;
     data['category'] = category!.index;
