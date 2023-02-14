@@ -1,0 +1,19 @@
+
+[
+    {
+        "medicinename": " Lipticon 10mg ",
+        "medicinePrice": 32,
+        "category": " tablet ",
+        "description": " cholesterol ",
+        "internalUse": true,
+        "expiryDate": "07/08/2023"
+    },
+    {
+        "medicinename": " Cresar 20mg ",
+        "medicinePrice": 70,
+        "category": " tablet ",
+        "description": " high blood presure ",
+        "internalUse": true,
+        "expiryDate": "10/10/2023"
+    }
+]
